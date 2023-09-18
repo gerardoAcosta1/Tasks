@@ -23,6 +23,9 @@ app.use(taskRoutes);
 app.get('/', (req, res) => {
     res.send('ok');
 })
+app.get('/users', (req, res) => {
+    res.send('ok, users');
+})
 
 app.listen(PORT, () => {
     console.log(`listen on port ${PORT}`)

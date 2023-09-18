@@ -12,7 +12,7 @@ const db = new Sequelize({
     ...process.env.NOD_ENV == 'production' ? {
         dialecOptions: {
             ssl:{
-                requerid: true,
+                required: true,
                 rejectUnauthorized: false
             }
         }

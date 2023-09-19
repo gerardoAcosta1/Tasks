@@ -28,9 +28,12 @@ const getUserTasks = async (req, res) => {
                 }
             ]
         });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
        
-        if(user.tasks.length == 0){
-            res.status(404).json({message: 'conflict, tasks not found for this user'})
+        if(user.tasks.length == 0 || !user){
+           return res.status(404).json({message: 'conflict, tasks not found for this user'})
         }
         res.json(user)
 
